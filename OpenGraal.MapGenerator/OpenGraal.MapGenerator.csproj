@@ -37,6 +37,9 @@
     <StartupObject>OpenGraal.MapGenerator.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClearScript">
+      <HintPath>..\packages\ClearScript.5.3.11.0\lib\net40\ClearScript.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,9 +53,6 @@
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="Mono.Posix" />
-    <Reference Include="OpenGraal.Common">
-      <HintPath>..\..\..\opengraal.common-cs\trunk\OpenGraal.Common\bin\Debug\OpenGraal.Common.dll</HintPath>
-    </Reference>
     <Reference Include="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <Private>False</Private>
     </Reference>
@@ -89,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +98,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Content Include="changelog.txt" />
+    <Content Include="Exports\CallbackManager.h" />
+    <Content Include="Exports\VersionSymbols.h" />
     <Content Include="readme.txt" />
     <Content Include="template.nw" />
     <Content Include="village4.zelda" />
@@ -109,13 +112,9 @@
     <Compile Include="TestWindow.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\opengraal.common-cs\trunk\OpenGraal.Common\OpenGraal.Common.csproj">
-      <Project>{BF323091-36E1-4A64-97A2-A62E5F5ABC1B}</Project>
+    <ProjectReference Include="..\..\OpenGraal.Common-cs\OpenGraal.Common\OpenGraal.Common.csproj">
+      <Project>{bf323091-36e1-4a64-97a2-a62e5f5abc1b}</Project>
       <Name>OpenGraal.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\opengraal.core-cs\trunk\OpenGraal.Core\OpenGraal.Core.csproj">
-      <Project>{CC4AF8B5-BECF-4562-A0E5-94FBE0FBAB8F}</Project>
-      <Name>OpenGraal.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
